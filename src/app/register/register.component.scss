@@ -1,0 +1,52 @@
+.container {
+  width: 50%;
+  margin: 5px auto;
+  border: 2px solid rgb(180, 176, 176);
+  border-radius: 50px;
+  padding: 15px;
+  text-align: center;
+}
+
+
+form {
+  width: 70%;
+  margin: 10px auto;
+
+  mat-form-field {
+    display: block;
+    margin: auto;
+  }
+
+  .form-ele {
+    display: block;
+    text-align: left;
+  }
+
+  a {
+    color: blue;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  button {
+    display: inline-block;
+    margin: 15px 15px;
+       
+  }
+  .signup {
+    background-color: #ffc107;
+  }
+  .cancel{
+    border-color: #ffc107;
+  }
+  .hint{
+    display: block;
+    float: left;
+    font-size: 12px;
+  }
+  .password-hint{
+    display: block;
+    text-align: left;
+    font-size: 12px;
+  }
+}

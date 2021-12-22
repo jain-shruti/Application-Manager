@@ -1,0 +1,13 @@
+<div>
+    <mat-toolbar>
+        <span>Application Manager</span>
+        <span class="example-spacer">
+            <button  mat-raised-button routerLink= "{{currentUrl}}" *ngIf="!isLoggedIn">{{btn}}</button>
+            <button  mat-raised-button (click)="onLogout()" *ngIf="isLoggedIn">Logout</button>
+        </span>
+  </mat-toolbar>
+  <div class="welcome-msg">
+      <p *ngIf="isLoggedIn">Welcome {{username}}! </p>
+  </div>
+</div>
+<router-outlet ></router-outlet>

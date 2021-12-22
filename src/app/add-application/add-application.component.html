@@ -1,0 +1,27 @@
+<mat-dialog-content>
+  <div class="container">
+    <h2 mat-dialog-title>{{ action.charAt(0).toUpperCase() + action.slice(1)}} application</h2>
+    <form (ngSubmit)="onSubmit()" #f="ngForm">
+        <mat-form-field>
+        <input matInput type="text" placeholder="App name" required class="form-control" name="appName" [(ngModel)]="local_data.appName"> 
+        </mat-form-field>
+        
+        <mat-form-field>
+        <input matInput type="text" placeholder="Developer" required class="form-control" name="developer" [(ngModel)]="local_data.developer"> 
+        </mat-form-field>
+        
+        <mat-form-field>
+        <input matInput type="text" placeholder="HOD" required class="form-control" name="hod" [(ngModel)]="local_data.hod"> 
+        </mat-form-field>
+        
+        <mat-form-field>
+        <input matInput type="text" placeholder="Client" required class="form-control" name="client" [(ngModel)]="local_data.client">
+        </mat-form-field>
+        <mat-form-field>
+        <input matInput type="text" placeholder="Link" required class="form-control" name="link" [(ngModel)]="local_data.link">
+        </mat-form-field>    
+        <button type="submit" class="submit-button"  mat-raised-button [disabled]="!f.valid" >{{action}}</button>
+        <button type="reset" class="reset-button" (click)="closeDialog()"  mat-stroked-button >Cancel</button>
+    </form>
+  </div>
+</mat-dialog-content>

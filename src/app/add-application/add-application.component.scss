@@ -1,0 +1,26 @@
+.container{
+  width: 80%;
+  margin: 0 auto;
+  h2{
+    margin-top: 5px;
+  }
+
+  mat-form-field {
+    display: block;
+  }
+
+  button {
+    margin: auto 5px;
+
+  }
+
+  .submit-button {
+    background-color: #ffc107;
+  }
+
+  .reset-button {
+    color: #ffc107;
+    border-color: #ffc107;
+  }
+}
+

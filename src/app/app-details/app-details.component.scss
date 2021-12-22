@@ -1,0 +1,50 @@
+.container {
+  width: 100%;
+  align-items: center;
+
+
+.add-filter{
+  display: block;
+  width: 98%;
+  margin: 10px auto;
+  .filter {
+    display: inline-block;
+  }
+  button{
+    float: right;
+    display: block;
+    min-width: fit-content;
+    margin: 10px auto;
+    background-color: #ffc107;
+    mat-icon{
+      margin-top: 4px;
+      font-size: 16px;
+    }
+  }
+  
+}
+
+table {
+  width: 98%;
+  margin: 15px auto;
+
+  th {
+    background-color: #8f1709;
+    color: #ffc107;
+  }
+
+  tr:nth-child(even) {
+    background-color: #ffe9a6;
+    color: white;
+  }
+  .edit-button {
+    float: left;
+    cursor: pointer;
+    &:hover{
+      color: #8f1709;
+      font-size: 18px;
+    }
+  }
+}
+}
+

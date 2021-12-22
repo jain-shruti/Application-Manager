@@ -1,0 +1,87 @@
+<div class="container">
+    <form  [formGroup]="signupForm" (ngSubmit)="onSubmit()"  >
+        <h2>Register</h2>
+        <mat-form-field>
+            <mat-label>First name</mat-label>
+            <input matInput
+            type="text" 
+            class="form-control" 
+            formControlName="fname" 
+            placeholder="Enter your first name" 
+            >
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Last name</mat-label>
+            <input matInput
+            type="text" 
+            class="form-control" 
+            formControlName="lname" 
+            placeholder="Enter your last name" 
+            >
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput 
+            type="email" 
+            class="form-control" 
+            formControlName="email" 
+            placeholder="Enter your mail address" 
+            >
+        </mat-form-field>
+        <mat-error class="hint" *ngIf="!signupForm.get('email')?.valid && signupForm.get('email')?.touched">Please enter valid email!</mat-error>
+        
+        <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input matInput 
+            type="text" 
+            class="form-control" 
+            formControlName="username" 
+            placeholder="Create a username" 
+            >
+        </mat-form-field>
+        <div formGroupName="passwords">
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput 
+                type="password"  
+                class="form-control" 
+                formControlName="password" 
+                placeholder="Enter password" 
+                >
+            </mat-form-field>
+            <div class="password-hint" *ngIf="!signupForm.get('passwords.password')?.pristine && signupForm.get('passwords.password')?.errors?.['pattern']">
+                Password must contain at least
+                <ul>
+                    <li> eight characters </li>
+                    <li> one uppercase letter [A-Z]</li>
+                    <li> one lowercase letter [a-z]</li>
+                    <li> one number [0-9]</li>
+                    <li> one special character eg:['@','$','!','%','*','?','&']</li>
+                </ul>
+            </div>
+            <mat-error class="hint" *ngIf="signupForm.get('passwords.password')?.errors?.['pattern'] && signupForm.get('passwords.password')?.touched ">Password doesn't meet the required criteria</mat-error>
+            <mat-form-field>
+                <mat-label>Confirm password</mat-label>
+                <input matInput 
+                type="password" 
+                class="form-control" 
+                formControlName="passwordcheck" 
+                placeholder="Re-enter your password" 
+                >   
+            </mat-form-field>
+            <mat-error class="hint" *ngIf="
+            signupForm.get('passwords')?.errors?.['mismatch'] &&
+             signupForm.get('passwords.passwordcheck')?.dirty "
+             >
+             Please enter matching!</mat-error> 
+        </div>
+        <br>
+        <div class="form-ele">
+            <a>Forgot Password?</a><br>
+            <mat-checkbox >Remember me</mat-checkbox>
+        </div>
+        <button class="signup" type="submit" mat-raised-button  [disabled]="!signupForm.valid" >Signup</button>
+        <button class="cancel" type="reset" mat-stroked-button >Cancel</button><br>
+		<a routerLink="/login">Already have an account? Login</a>
+    </form>
+</div>
